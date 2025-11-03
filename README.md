@@ -104,6 +104,37 @@ npm run build
 
 빌드된 파일은 `frontend/dist` 디렉토리에 생성됩니다.
 
+### 4. GitHub Pages 배포
+
+이 프로젝트는 GitHub Pages를 통해 자동으로 배포됩니다.
+
+**배포 URL**: https://kccho88.github.io/seoulrider/
+
+**배포 방법**:
+1. 프론트엔드 코드를 수정한 후, 빌드를 실행합니다:
+   ```bash
+   cd frontend
+   npm run build
+   ```
+
+2. 빌드 산출물을 루트의 `docs/` 폴더로 복사합니다:
+   ```bash
+   cd ..
+   rm -rf docs
+   cp -r frontend/dist docs
+   ```
+
+3. 변경사항을 커밋하고 푸시합니다:
+   ```bash
+   git add .
+   git commit -m "Update GitHub Pages deployment"
+   git push
+   ```
+
+**설정 참고사항**:
+- `vite.config.js`의 `base` 옵션이 `/seoulrider/`로 설정되어 있어 GitHub Pages의 서브경로에서 올바르게 작동합니다.
+- GitHub 저장소 Settings > Pages에서 Source를 "main branch /docs folder"로 설정해야 합니다.
+
 ## 🔌 API 엔드포인트
 
 ### GET /api/horse
