@@ -122,6 +122,7 @@ npm run build
    cd ..
    rm -rf docs
    cp -r frontend/dist docs
+   touch docs/.nojekyll
    ```
 
 3. 변경사항을 커밋하고 푸시합니다:
@@ -133,6 +134,7 @@ npm run build
 
 **설정 참고사항**:
 - `vite.config.js`의 `base` 옵션이 `/seoulrider/`로 설정되어 있어 GitHub Pages의 서브경로에서 올바르게 작동합니다.
+- `docs/.nojekyll` 파일이 있어 GitHub Pages가 Jekyll 처리를 건너뛰고 React 앱을 직접 서빙합니다.
 - GitHub 저장소 Settings > Pages에서 Source를 "main branch /docs folder"로 설정해야 합니다.
 
 ## 🔌 API 엔드포인트
